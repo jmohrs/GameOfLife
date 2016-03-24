@@ -7,21 +7,21 @@ from Tkinter import Canvas
 
 class Cell:
 	def __init__(self, canvas, x, y, width, alive, key):
-		self.key					= key
-		self.x 						= x
-		self.y 						= y
-		self.width				= width
-		self.canvas				= canvas
-		self.alive 				= alive
-		self.left					= None
-		self.topleft			= None
-		self.right				= None
-		self.topright			= None
-		self.top					= None
-		self.bottom				= None
-		self.bottomleft		= None
+		self.key			= key
+		self.x 			= x
+		self.y 			= y
+		self.width		= width
+		self.canvas	     = canvas
+		self.alive 		= alive
+		self.left			= None
+		self.topleft	     = None
+		self.right		= None
+		self.topright		= None
+		self.top			= None
+		self.bottom		= None
+		self.bottomleft	= None
 		self.bottomright	= None
-		self.alive				= alive
+		self.alive		= alive
 		if (self.alive):
 			self.rect = canvas.create_rectangle(x, y, x + width, y + width, fill="black")
 		else:
