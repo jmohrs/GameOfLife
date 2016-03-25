@@ -26,7 +26,7 @@ class GameOfLife:
                     key += 1	
                self.cells.append(row)
 
-          for i in range(0, self.number_of_rows):					# <- Set up the neighbours of a cell
+          for i in range(0, self.number_of_rows):      # <- Set up the neighbours of a cell
                for j in range(0, self.number_of_coloumns):
                     cell                = self.cells[i][j]
                     cell.left           = self.cells[i][(j-1) % self.number_of_coloumns]
@@ -74,7 +74,16 @@ class GameOfLife:
                cell = self.cells[y][x]
                self.living_cells.append(cell)
           for cell in self.living_cells: cell.__live__()
-          
+
+
+     def _adjust_start_configuration_(self, cell_location):
+          cell = self.cells[cell_location[1]][cell_location[0]]
+          if (cell.alive):
+               cell.__kill__()
+               self.living_cells.remove(cell)
+          else:
+               cell.__live__()
+               self.living_cells.append(cell)          
 
 
 
